@@ -5,6 +5,7 @@ import 'package:agami_dummy/screens/Welcome/login/component/background.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/round_input_field.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/rounded_password_field.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/textfield_container.dart';
+import 'package:agami_dummy/screens/Welcome/signUp/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -38,7 +39,14 @@ class Body extends StatelessWidget {
               text: "LOGIN",
               press: () {},
             ),
-            AlreadyHaveAnAccountCheck()
+            SizedBox(height: size.height * 0.03),
+            AlreadyHaveAnAccountCheck(
+              press: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SignUp();
+                }));
+              },
+            )
           ],
         ),
       ),

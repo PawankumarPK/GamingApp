@@ -1,6 +1,7 @@
 import 'package:agami_dummy/component/rounded_button.dart';
 import 'package:agami_dummy/constant.dart';
 import 'package:agami_dummy/screens/Welcome/login/login_screen.dart';
+import 'package:agami_dummy/screens/Welcome/signUp/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'background.dart';
@@ -45,7 +46,11 @@ class Body extends StatelessWidget {
               text: "SIGNUP",
               textColor: Colors.black,
               color: kPrimaryLightColor,
-              press: () {},
+              press: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SignUp();
+                }));
+              },
             )
           ],
         ),
