@@ -1,5 +1,4 @@
 import 'package:agami_dummy/component/rounded_button.dart';
-import 'package:agami_dummy/constant.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/already_have_an_account_check.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/round_input_field.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/rounded_password_field.dart';
@@ -9,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'or_divider.dart';
+import 'social_icons.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -44,12 +44,27 @@ class Body extends StatelessWidget {
                 }));
               },
             ),
-            OrDivider()
+            OrDivider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SocialIcon(
+                  iconSrc: "assets/icons/facebook.svg",
+                  press: () {},
+                ),
+                SocialIcon(
+                  iconSrc: "assets/icons/twitter.svg",
+                  press: () {},
+                ),
+                SocialIcon(
+                  iconSrc: "assets/icons/google-plus.svg",
+                  press: () {},
+                )
+              ],
+            )
           ],
         ),
       ),
     );
   }
 }
-
-
