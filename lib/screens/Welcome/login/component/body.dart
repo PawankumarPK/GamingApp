@@ -20,7 +20,17 @@ class Body extends StatelessWidget {
               "assets/icons/login.svg",
               height: size.height * 0.35,
             ),
-            TextFieldContainer()
+            TextFieldContainer(child: TextField(
+            decoration: InputDecoration(
+              icon: Icon(
+                Icons.person,
+                color: kPrimaryColor,
+              ),
+              hintText: "Your Email",
+              border: InputBorder.none
+            ),
+            ),
+            )
           ],
         ),
       ),
@@ -40,6 +50,7 @@ class TextFieldContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
       width: size.width * 0.8,
       decoration: BoxDecoration(
