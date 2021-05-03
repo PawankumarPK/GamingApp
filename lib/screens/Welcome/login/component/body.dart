@@ -1,5 +1,7 @@
 import 'package:agami_dummy/constant.dart';
 import 'package:agami_dummy/screens/Welcome/login/component/background.dart';
+import 'package:agami_dummy/screens/Welcome/login/component/round_input_field.dart';
+import 'package:agami_dummy/screens/Welcome/login/component/textfield_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -20,16 +22,26 @@ class Body extends StatelessWidget {
               "assets/icons/login.svg",
               height: size.height * 0.35,
             ),
-            TextFieldContainer(child: TextField(
-            decoration: InputDecoration(
-              icon: Icon(
-                Icons.person,
-                color: kPrimaryColor,
-              ),
+            RoundedInputField(
               hintText: "Your Email",
-              border: InputBorder.none
+              onChanged: (value) {},
             ),
-            ),
+            TextFieldContainer(
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: "Password",
+                  icon: Icon(
+                    Icons.lock,
+                    color:kPrimaryColor
+                  ),
+                  suffixIcon: Icon(
+                    Icons.visibility,
+                    color: kPrimaryColor,
+                  ),
+                  border: InputBorder.none
+                ),
+              ),
             )
           ],
         ),
@@ -38,25 +50,6 @@ class Body extends StatelessWidget {
   }
 }
 
-class TextFieldContainer extends StatelessWidget {
-  final Widget child;
 
-  const TextFieldContainer({
-    Key key,
-    this.child,
-  }) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-      width: size.width * 0.8,
-      decoration: BoxDecoration(
-          color: kPrimaryLightColor, borderRadius: BorderRadius.circular(29)
-      ),
-      child: child,
-    );
-  }
-}
+
